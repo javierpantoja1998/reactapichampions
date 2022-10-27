@@ -14,7 +14,7 @@ export default class MenuRutas extends Component {
     equipos:[],
     status:false
 }
-
+//Tenemos que crear la funcion de loadequipos para mostrar los equipos en la nav bar
 loadEquipos = () => {
     
     var request = "/api/Equipos";
@@ -46,7 +46,7 @@ componentDidMount = () => {
               <a className="nav-link" href="/">Home</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">Apuestas</a>
+              <NavLink to="/apuestas">Apuestas</NavLink>
             </li>
             </ul>
             <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -55,7 +55,7 @@ componentDidMount = () => {
 
             </a>
             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-            
+        {/* Creamos el script que "mapee" los equipos y muestre el nombre de todos los equipos */}
         {
             this.state.equipos.map((equipo,index)=>{
 
