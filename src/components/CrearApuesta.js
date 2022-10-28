@@ -17,9 +17,10 @@ export default class Apostar extends Component {
     e.preventDefault();
     
     //Definimos y recogemos las vbariables
-    var cajaUsuario = this.cajaUsuario.current.value;
+    var cajaUsuario = this.cajaUsuarioRef.current.value;
     var cajaResultado = this.cajaResultadoRef.current.value;
     var cajaFecha = this.cajaFechaRef.current.value;
+    
     var request = "api/Apuestas";
     var url = Global.url + request;
 
@@ -48,7 +49,7 @@ export default class Apostar extends Component {
           <input type="text" id="cajaResultado" ref={this.cajaResultadoRef} /><br />
           <label>Fecha</label><br />
           <input type="text" id="cajaFecha" ref={this.cajaFechaRef} /><br />
-          <button type='button' onClick={this.crearApuesta()} >APOSTAR</button>
+          <button type='button' onClick={this.crearApuesta} >APOSTAR</button>
           
         </form>
       </div>
